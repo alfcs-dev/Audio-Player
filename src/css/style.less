@@ -1,19 +1,46 @@
-/* src/css/pretty.less */
-
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 @red        : #CC594A;
 @yellow     : #B8CC24;
-@blue       : #8BC5FF;
+@blue       : #404b69;
 @purple     : #6F3596;
-
-body        { 
-    background:@red;
-    color:@yellow;
+@gray		: #F0F0F0; 
+.shadow{
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.radius{
+	border-radius: 5px;
+}
+body, h1,h2,h3,h4,h4,h6, p{ margin: 0; padding: 0;}
+html, body{
+	height: 100%; position:relative;
 }
 
-button      {
+body { 
     background:@blue;
+    color:@yellow;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 5px;
 }
 
+header{
+	height: 25%;
+	width: 95%;
+	margin: 0 auto;
+	.shadow;
+	.radius;
+	background-color: @gray;
+	h2{
+		font-size: 4em;
+		text-align: center;
+		 position: relative;
+		  top: 50%;
+		  transform: translateY(-50%);
+	}
+}
+button      {
+    background:@purple;
+}
+ 
 div         {
     background:@purple;
 }

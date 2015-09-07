@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 		  // for stylesheets, watch css and less files 
 		  // only run less and cssmin stylesheets: { 
 		  css:{ 
-		  	files: ['src//*.css', 'src//*.less'], tasks: ['less', 'cssmin'] },
+		  	files: ['src/**/*.css', 'src/**/*.less'], tasks: ['less', 'cssmin'] },
 
 		  // for scripts, run jshint and uglify 
 		  scripts: { 
@@ -74,5 +74,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-wiredep');
 
-  grunt.registerTask('default', ['jshint', 'uglify','less', 'cssmin']); 
+  grunt.registerTask('default', ['watch']); 
 };
