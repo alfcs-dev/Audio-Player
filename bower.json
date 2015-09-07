@@ -1,0 +1,24 @@
+{
+  "name": "Audio Player",
+  "version": "0.0.1",
+  "authors": [
+    "Alfredo Castañeda <alfcastaneda@gmail.com>"
+  ],
+  "description": "First version of audio player, which will receive url, and play audio file",
+  "keywords": [
+    "angular",
+    "audio",
+    "test"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5"
+  }
+}
