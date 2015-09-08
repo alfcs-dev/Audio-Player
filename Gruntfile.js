@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 	      },
 	      build: {
 	        files: {
-	          'dist/js/audio-app.min.js': ['src/js/audio-app.js']
+	          'dist/js/audio-app.min.js': ['src/js/audio-app.js'] 
 	        }
 	      }
 	    },
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 	      }
 	    },
 		watch: {
-		  
+		  html:{files: ['*.html'], tasks:['watch:css']},
 		  // for stylesheets, watch css and less files 
 		  // only run less and cssmin stylesheets: { 
 		  css:{ 

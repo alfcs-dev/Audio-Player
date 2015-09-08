@@ -5,6 +5,11 @@
     "Alfredo Castañeda <alfcastaneda@gmail.com>"
   ],
   "description": "First version of audio player, which will receive url, and play audio file",
+  "main": "src/js/audio-app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hobbit1mx/Audio-Player.git"
+  },
   "keywords": [
     "angular",
     "audio",
