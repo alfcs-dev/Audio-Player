@@ -19,10 +19,20 @@ body {
     background:@blue;
     color:@yellow;
     font-family: 'Josefin Sans', sans-serif;
-    padding-top: 5px;
 }
-
-header{
+md-toolbar{
+	background-color: @gray;
+	.md-toolbar-tools{
+		font-size: 4em;
+	};
+	h2{
+		text-align: center;
+		 position: relative;
+		  top: 50%;
+		  transform: translateY(-50%);
+	}
+}
+/*header{
 	height: 25%;
 	width: 95%;
 	margin: 0 auto;
@@ -36,7 +46,7 @@ header{
 		  top: 50%;
 		  transform: translateY(-50%);
 	}
-}
+}*/
 button      {
     background:@purple;
 }

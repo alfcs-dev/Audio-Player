@@ -25,23 +25,34 @@ body {
   background: #404b69;
   color: #b8cc24;
   font-family: 'Josefin Sans', sans-serif;
-  padding-top: 5px;
 }
-header {
-  height: 25%;
-  width: 95%;
-  margin: 0 auto;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5px;
+md-toolbar {
   background-color: #f0f0f0;
 }
-header h2 {
+md-toolbar .md-toolbar-tools {
   font-size: 4em;
+}
+md-toolbar h2 {
   text-align: center;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
+/*header{
+	height: 25%;
+	width: 95%;
+	margin: 0 auto;
+	.shadow;
+	.radius;
+	background-color: @gray;
+	h2{
+		font-size: 4em;
+		text-align: center;
+		 position: relative;
+		  top: 50%;
+		  transform: translateY(-50%);
+	}
+}*/
 button {
   background: #6f3596;
 }

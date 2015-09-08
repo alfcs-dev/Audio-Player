@@ -2,6 +2,7 @@
 module.exports = function(grunt) {
 	//Initializing the configuration object
 	grunt.initConfig({
+
 	    // configure jshint to validate js files -----------------------------------
 	    jshint: {
 	      options: {
@@ -51,7 +52,6 @@ module.exports = function(grunt) {
 	      }
 	    },
 		watch: {
-		  html:{files: ['*.html'], tasks:['watch:css']},
 		  // for stylesheets, watch css and less files 
 		  // only run less and cssmin stylesheets: { 
 		  css:{ 

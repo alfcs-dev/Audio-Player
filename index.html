@@ -1,25 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="audioApp" lang="en"> 
 <head>
 	<title>Audio Player</title>
+	<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
-		<!-- bower:js -->
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-audio/app/angular.audio.js"></script>
-	<!-- endbower -->
-	<script src="dist/js/audio-app.min.js"></script>
 </head>
-<body ng-app="audioApp">
+<body >
 	<header>
-		<h2>Audio Player</h2>
+	    <md-toolbar  class="md-tall md-accent">
+	        <h2  class="md-toolbar-tools">
+	         	Audio Player
+	        </h2>
+	    </md-toolbar>
 	</header>
-	<section audio-input>
-		<form name="audioForm">
-			This scope value <input type="url" name="input" ng-model="audioUrl">
-
+	<section ng-controller="FormCtrl" layout="column">
+		<form name="urls" ng-submit="addAudios()">
+		  <md-content layout-padding layout="row" layout-sm="column">
+	  		<md-input-container ng-repeat="path in audios">
+			<label>Audio url</label>
+			<input type="url" ng-model="path.url" name="" placeholder="Write here the url of the audio you want to hear">
+			<button class="remove" ng-show="$last" ng-click="removeChoice()">-</button>
+		    </md-input-container>
+		  </md-content>
+			<button class="addfields" ng-click="addNewAudio()">Add other url</button>
+			<button type="submit">Process Urls</button>
 		</form> 
-		{{audioForm.input.$valid}}
+		<pre>{{ audios | json }}</pre>
 	</section>
-
+		<!-- bower:js -->
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-audio/app/angular.audio.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
+		<script src="bower_components/angular-aria/angular-aria.js"></script>
+		<script src="bower_components/angular-material/angular-material.js"></script>
+		<!-- endbower -->
+	<script src="dist/js/audio-app.min.js"></script>
 </body>
 </html>
