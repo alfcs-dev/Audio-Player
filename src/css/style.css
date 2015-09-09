@@ -38,6 +38,13 @@ md-toolbar h2 {
   top: 50%;
   transform: translateY(-50%);
 }
+.md-button.md-fab {
+  background-color: #6f3596;
+  font-size: 4em;
+}
+.md-button.md-fab:hover {
+  background-color: #404b69 !important;
+}
 section {
   padding: 10px;
 }

@@ -55,13 +55,29 @@ module.exports = function(grunt) {
 		  // for stylesheets, watch css and less files 
 		  // only run less and cssmin stylesheets: { 
 		  css:{ 
-		  	files: ['src/**/*.css', 'src/**/*.less'], tasks: ['less', 'cssmin'] },
+		  	files: ['src/**/*.less'], tasks: ['less', 'cssmin'] },
 
 		  // for scripts, run jshint and uglify 
 		  scripts: { 
 		    files: 'src/**/*.js', tasks: ['jshint', 'uglify'] 
 		  } 
+		},
+		karma: {  
+			unit: {
+				options: {
+					frameworks: ['jasmine'],
+					singleRun: true,
+					browsers: ['Firefox'],
+					files: [
+				      'bower_components/angular/angular.js',
+				      'bower_components/angular-mocks/angular-mocks.js',
+				      'test/*.js',
+				      'src/js/*.js' 
+					]
+				}
+			}
 		}
+
 	});
 
 // Plugin loading
@@ -73,6 +89,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-wiredep');
+  grunt.loadNpmTasks('grunt-karma'); 
 
   grunt.registerTask('default', ['watch']); 
+  grunt.registerTask('test', ['jshint', 'karma']);
 };
