@@ -13,20 +13,43 @@
 	        </h2>
 	    </md-toolbar>
 	</header>
-	<section ng-controller="FormCtrl" layout="column">
-		<form name="urls" ng-submit="addAudios()">
-		  <md-content layout-padding layout="row" layout-sm="column">
-	  		<md-input-container ng-repeat="path in audios">
-			<label>Audio url</label>
-			<input type="url" ng-model="path.url" name="" placeholder="Write here the url of the audio you want to hear">
-			<button class="remove" ng-show="$last" ng-click="removeChoice()">-</button>
-		    </md-input-container>
-		  </md-content>
-			<button class="addfields" ng-click="addNewAudio()">Add other url</button>
-			<button type="submit">Process Urls</button>
+	<section  audio-player>
+		<form name="urls" ng-submit="addAudios(urls.$valid)" novalidate >
+			<md-content layout-padding layout="row" layout-sm="column">
+				<div layout layout-sm="column" ng-repeat="path in audios">
+					<md-input-container flex>
+						<label>Audio url</label>
+						<input type="url" ng-model="path.url" ng-pattern="/\.(mp3|wav)$/" name="" required>
+					</md-input-container>
+					<md-input-container flex>
+						<md-button class="md-fab md-mini" ng-click="removeUrl($index)"  aria-label="Remove this url"> -</md-button> 
+					</md-input-container>
+				</div>
+			</md-content>
+			<div layout-padding layout="row" layout-sm="column" layout-align="center">
+				<md-button class="md-raised" ng-click="addNewAudio()">Add another URL</md-button>
+		      	<md-button class="md-raised md-primary" type="submit" ng-disabled="urls.$invalid">SUBMIT</md-button>
+		    </div>
+
 		</form> 
-		<pre>{{ audios | json }}</pre>
+ 		<div layout-padding layout="row" layout-sm="column" layout-align="center">
+			<md-card ng-if="urls.$submitted" >
+		      <md-card-content>
+		        <h2 class="md-title">{{audio.id}} &ndash; {{audio.currentTime | trackTime}}</h2>
+		        <p>
+
+		        </p>
+		      </md-card-content>
+		      <div class="md-actions" layout="row" layout-align="end center">
+		        <md-button ng-if="indexTrack > 0"  ng-click="prev(audio, indexTrack)">Previous</md-button>
+		        <md-button ng-click='audio.paused ? audio.play() : audio.pause()'>{{audio.paused ? "Play" : "Pause" }}</md-button>
+		        <md-button ng-if="indexTrack <= (validUrls.length - 1)" ng-click="next(audio, indexTrack)">NEXT</md-button>
+		      </div>
+		    </md-card>
+ 		</div>
+
 	</section>
+
 		<!-- bower:js -->
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/angular-audio/app/angular.audio.js"></script>
@@ -34,6 +57,7 @@
 		<script src="bower_components/angular-aria/angular-aria.js"></script>
 		<script src="bower_components/angular-material/angular-material.js"></script>
 		<!-- endbower -->
-	<script src="dist/js/audio-app.min.js"></script>
+		<script src="dist/js/audio-app.min.js"></script>
 </body>
 </html>
+

@@ -38,24 +38,6 @@ md-toolbar h2 {
   top: 50%;
   transform: translateY(-50%);
 }
-/*header{
-	height: 25%;
-	width: 95%;
-	margin: 0 auto;
-	.shadow;
-	.radius;
-	background-color: @gray;
-	h2{
-		font-size: 4em;
-		text-align: center;
-		 position: relative;
-		  top: 50%;
-		  transform: translateY(-50%);
-	}
-}*/
-button {
-  background: #6f3596;
-}
-div {
-  background: #6f3596;
+section {
+  padding: 10px;
 }
