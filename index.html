@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html ng-app="audioApp" lang="en"> 
+<html ng-app="audioApp" lang="en">
 <head>
 	<title>Audio Player</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
 </head>
-<body >
+<body>
 	<header>
-	    <md-toolbar class="md-tall">
-	        <h2  class="md-toolbar-tools">
-	         	Audio Player
-	        </h2>
-	    </md-toolbar>
+		<md-toolbar class="md-tall">
+			<h2  class="md-toolbar-tools">
+			 	Audio Player
+			</h2>
+		</md-toolbar>
 	</header>
-	<section  audio-player>
+	<audio-list>
 		<form name="urls" ng-submit="addAudios(urls.$valid)" novalidate >
 			<md-content layout-padding layout="row" layout-sm="column">
 				<div layout layout-sm="column" ng-repeat="path in audios">
@@ -28,9 +29,8 @@
 			</md-content>
 			<div layout-padding layout="row" layout-sm="column" layout-align="center">
 				<md-button class="md-raised" ng-click="addNewAudio()">Add another URL</md-button>
-		      	<md-button class="md-raised md-primary" type="submit" ng-disabled="urls.$invalid">Apply playlist</md-button>
-		    </div>
-
+				<md-button class="md-raised md-primary" type="submit" ng-disabled="urls.$invalid">Apply playlist</md-button>
+			</div>
 		</form> 
  		<div layout-padding layout="row" layout-sm="column" layout-align="center">
 			<md-card ng-if="urls.$submitted" >
@@ -59,17 +59,14 @@
 		      </div>
 		    </md-card> 
  		</div>
-
-	</section>
-
-		<!-- bower:js -->
-		<script src="bower_components/angular/angular.js"></script>
-		<script src="bower_components/angular-audio/app/angular.audio.js"></script>
-		<script src="bower_components/angular-animate/angular-animate.js"></script>
-		<script src="bower_components/angular-aria/angular-aria.js"></script>
-		<script src="bower_components/angular-material/angular-material.js"></script>
-		<!-- endbower -->
-		<script src="dist/js/audio-app.min.js"></script>
+	</audio-list>
+	<!-- bower:js -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-audio/app/angular.audio.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.js"></script>
+	<script src="bower_components/angular-material/angular-material.js"></script>
+	<!-- endbower -->
+	<script type="text/javascript" src="dist/js/audio-app.min.js"></script>
 </body>
 </html>
-
