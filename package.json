@@ -10,13 +10,14 @@
     "type": "git",
     "url": "https://github.com/hobbit1mx/Audio-Player.git"
   },
-  "author": "Alfredo Castañeda",
+  "author": {"name": "Alfredo Castañeda", "email":"admin@alfcastaneda.com"},
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hobbit1mx/Audio-Player/issues"
   },
   "homepage": "https://github.com/hobbit1mx/Audio-Player",
   "devDependencies": {
+    "angular-mocks": "^1.4.5",
     "grunt": "^0.4.5",
     "grunt-concat": "^0.1.6",
     "grunt-contrib-concat": "^0.5.1",
@@ -30,6 +31,7 @@
     "jasmine-core": "^2.3.4",
     "jshint-stylish": "^2.0.1",
     "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
     "karma-firefox-launcher": "^0.1.6",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
