@@ -25,17 +25,19 @@ app.directive('audioList', ['ngAudio', function(ngAudio){
 	        };
 	       	$scope.next = function(index){
 				$scope.indexTrack += 1;
-				if($scope.indexTrack > ($scope.validUrls.length - 1) ){
+				$scope.audio.stop();
+				if($scope.indexTrack > ($scope.audios.length - 1) ){
 					$scope.indexTrack = 0;
 				} 
-	        	$scope.audio = scope.objAudios[scope.indexTrack];
+	        	$scope.audio = $scope.objAudios[$scope.indexTrack];
 	        };
 	        $scope.prev = function(index){
 	          $scope.indexTrack -= 1;
+	          $scope.audio.stop();
 	          if($scope.indexTrack < 0){
-	            $scope.indexTrack = $scope.validUrls.length - 1;
+	            $scope.indexTrack = $scope.audios.length - 1;
 	          } 
-	          $scope.audio = $scope.objAudios[scope.indexTrack];
+	          $scope.audio = $scope.objAudios[$scope.indexTrack];
 	        };
 		}
 	};
