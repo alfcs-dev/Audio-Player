@@ -69,10 +69,14 @@ module.exports = function(grunt) {
 					singleRun: true,
 					browsers: ['Firefox'],
 					files: [
-				      'bower_components/angular/angular.js',
-				      'bower_components/angular-mocks/angular-mocks.js',
-				      'test/*.js',
-				      'src/js/*.js' 
+					'bower_components/angular/angular.js',
+					'node_modules/angular-mocks/angular-mocks.js',
+					'bower_components/angular-audio/app/angular.audio.js',
+					'bower_components/angular-animate/angular-animate.js',
+					'bower_components/angular-aria/angular-aria.js',
+					'bower_components/angular-material/angular-material.js',
+					'test/*.js',
+					'src/js/*.js' 
 					]
 				}
 			}
@@ -92,5 +96,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma'); 
 
   grunt.registerTask('default', ['watch']); 
+  grunt.registerTask('build', ['less:build', 'uglify:build', 'cssmin:build']); 
   grunt.registerTask('test', ['jshint', 'karma']);
 };
